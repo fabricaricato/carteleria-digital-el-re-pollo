@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: #fffef5;
+  color: #333;
+}
+
+.header {
+  background-color: #ffca3a;
+  color: #2e2e2e;
+  text-align: center;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.footer {
+  background-color: #ffca3a;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+.sidebar {
+  flex: 1;
+  background: #fff5d7;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 8px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.product-card .price {
+  font-weight: bold;
+  color: #e06c00;
+  margin-top: 0.5rem;
+}
+
+.rotating-products {
+  flex: 3;
+}
+
+.rotating-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.admin-panel {
+  flex: 1;
+  background-color: #fffaf0;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-panel th, .admin-panel td {
+  padding: 0.5rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-panel input {
+  width: 100%;
+  padding: 0.3rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.admin-panel button {
+  background-color: #ffca3a;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.admin-panel button:hover {
+  background-color: #ffd45e;
+}
