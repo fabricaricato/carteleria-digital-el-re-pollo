@@ -11,15 +11,24 @@ Una cartelera digital interactiva para mostrar productos avícolas en pantalla, 
 
 ---
 
-src/
-├── components/
-│   ├── Header.jsx
-│   ├── ProductCard.jsx
-│   ├── ProductList.jsx
-│   ├── RotatingProducts.jsx
-│   ├── Sidebar.jsx
-│   ├── AdminPanel.jsx
-│   └── Footer.jsx
-├── App.jsx
-├── main.jsx
-└── index.css
+## 🧩 Estructura del proyecto
+
+PROYECTO ELREPOLLO/
+├── node_modules/
+├── public/
+│ └── images/ # Imágenes y recursos estáticos
+├── src/
+│ ├── assets/ # Imágenes, íconos, fuentes o estilos globales
+│ ├── components/ # Componentes reutilizables (Header, Footer, Cards, etc.)
+│ ├── context/ # Archivos de Context API (manejo global de estado)
+│ ├── router/ # Configuración de rutas y navegación
+│ ├── views/ # Páginas o vistas completas (Cartelera, PanelAdmin, etc.)
+│ │ ├── index.css # Estilos globales de la app
+│ │ └── main.jsx # Punto de entrada principal de React
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
