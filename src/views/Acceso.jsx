@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { usePassword } from "../context/PasswordContext";
 
 export default function Acceso() {
-  const [contrasena, setContrasena] = useState();
-  const [pass, setPass] = useState("0000");
-  const navigate = useNavigate();
+  // const [contrasena, setContrasena] = useState();
+  const [pass, setPass] = useState(contrasena)
+  const navigate = useNavigate()
+  const {contrasena, setContrasena } = usePassword()
 
   const manejarEnvio = (e) => {
     e.preventDefault();
-    if (contrasena === pass) {
+    if (pass === contrasena) {
       alert("¡Acceso correcto!");
       navigate("/home");
     } else {
