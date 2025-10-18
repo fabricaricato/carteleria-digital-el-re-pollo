@@ -1,4 +1,14 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 export default function Acceso() {
+  const [contrasena, setContrasena] = useState("0000")
+  const navigate = useNavigate()
+  console.log(contrasena)
+  const manejarBotonAcceso = (e) => {
+    e.preventDefault()
+    navigate("/home")
+  }
   return (
     <div className="contenedor-login">
       <div className="tarjeta-login">
@@ -25,10 +35,11 @@ export default function Acceso() {
               name="contraseña"
               placeholder="Ingrese su contraseña"
               required
+              onChange={(evento) => setContrasena(evento.target.value)}
             />
           </div>
 
-          <button type="submit" className="boton">
+          <button onClick={manejarBotonAcceso} className="boton">
             Ingresar
           </button>
 

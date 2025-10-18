@@ -1,6 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const navigate = useNavigate()
+
+  const manejarBotonCerrar = () => {
+    navigate("/")
+  }
   return (
     <main className="contenedor-home">
       <h1 className="titulo-home">Panel de administración - El Re Pollo</h1>
@@ -9,7 +14,7 @@ export default function Home() {
         <Link className="vista-previa">Vista previa de cartelería</Link>
       </section>
       <div className="contenedor-cerrar-sesion">
-        <button className="boton-cerrar-sesion">Cerrar sesión</button>
+        <button onClick={manejarBotonCerrar} className="boton-cerrar-sesion">Cerrar sesión</button>
       </div>
     </main>
   )
