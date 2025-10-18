@@ -15,6 +15,7 @@
   --color-amarillo-hover: #E0B020;
   --color-fondo-claro: #f0f4f8;
   --color-blanco: #FFFFFF;
+  --color-blanco-hover: #dfdfdf;
   --color-texto-oscuro: #333;
   --color-sombra: rgba(0, 0, 0, 0.15);
 }
@@ -154,7 +155,10 @@
   max-width: 320px;
 }
 
-button {
+button,
+.botones .boton-precios,
+.botones .vista-previa,
+.botones .boton-cerrar-sesion {
   border: none;
   border-radius: 12px;
   padding: 14px;
@@ -164,6 +168,8 @@ button {
   color: white;
   transition: all 0.25s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-decoration: none;
+  text-align: center;   
 }
 
 .boton-precios {
@@ -173,6 +179,7 @@ button {
 
 .boton-precios:hover {
   background-color: var(--color-amarillo-hover);
+  transform: scale(1.03);
 }
 
 .vista-previa {
@@ -181,9 +188,22 @@ button {
 
 .vista-previa:hover {
   background-color: var(--color-azul-hover);
+  transform: scale(1.03); 
 }
 
-button:active {
+.boton-cerrar-sesion {
+  margin-top: 20px;
+  color: var(--color-texto-oscuro);
+}
+
+.boton-cerrar-sesion:hover{
+  background-color: var(--color-blanco-hover);
+  transform: scale(1.03); 
+}
+
+button:active,
+.botones .boton-precios:active,
+.botones .vista-previa:active {
   transform: scale(0.97);
 }
 
@@ -285,7 +305,6 @@ button:active {
   margin-top: 25px;
 }
 
-/* Se sobreescriben los estilos de 'button' genérico y '.boton' del login */
 .formulario-acciones .boton {
   flex: 1;
   padding: 15px;
@@ -322,12 +341,23 @@ button:active {
   background-color: var(--color-azul-hover);
 }
 
-.boton-volver {
-  color: #333;
+.contenedor-boton-volver {
+  text-align: center;
+  margin-top: 20px;
 }
 
-.boton-volver:hover{
+.boton-volver {
+  display: inline-block; 
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--color-azul-principal);
+  transition: transform 0.2s ease-out;
+}
+
+.boton-volver:hover {
   transform: translateY(-3px);
+  text-decoration: underline; 
 }
 
 .boton-volver:active {

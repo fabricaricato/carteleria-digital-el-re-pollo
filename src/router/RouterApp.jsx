@@ -9,7 +9,7 @@ const RouterApp = () => {
       <Routes>
         <Route path="/" element={<Acceso />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/panel-de-precios" element={<PanelPrecios/>} />
+        <Route path="/panel" element={<PanelPrecios/>} />
       </Routes>
     </BrowserRouter>
   )

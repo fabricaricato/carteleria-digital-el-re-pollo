@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "../index.css"
 
 function PanelPrecios() {
@@ -80,7 +81,7 @@ function PanelPrecios() {
             <button type="button" className="boton boton-previsualizar">Vista Previa</button>
           </div>
           <div className="contenedor-boton-volver">
-            <button className="boton-volver">🠔 Volver</button>
+            <Link className="boton-volver" to="/home">🠔 Volver</Link>
           </div>
         </form>
       </div>
