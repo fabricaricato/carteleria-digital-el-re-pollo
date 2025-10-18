@@ -2,12 +2,20 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Acceso() {
-  const [contrasena, setContrasena] = useState("0000")
+  const [contrasena, setContrasena] = useState()
   const navigate = useNavigate()
+
   console.log(contrasena)
+
+  const pass = "0000"
+
   const manejarBotonAcceso = (e) => {
     e.preventDefault()
-    navigate("/home")
+    if (contrasena === pass) {
+      navigate("/home")
+    } else {
+      console.log("contraseña incorrecta")
+    }
   }
   return (
     <div className="contenedor-login">
