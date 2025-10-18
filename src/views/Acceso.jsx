@@ -3,10 +3,9 @@ import { useNavigate } from "react-router-dom";
 import { usePassword } from "../context/PasswordContext";
 
 export default function Acceso() {
-  // const [contrasena, setContrasena] = useState();
-  const [pass, setPass] = useState(contrasena)
   const navigate = useNavigate()
-  const {contrasena, setContrasena } = usePassword()
+  const { contrasena, setContrasena } = usePassword()
+  const [pass, setPass] = useState("") // Comienza vacío
 
   const manejarEnvio = (e) => {
     e.preventDefault();
@@ -35,7 +34,7 @@ export default function Acceso() {
               name="contraseña"
               placeholder="Ingrese su contraseña"
               required
-              onChange={(evento) => setContrasena(evento.target.value)}
+              onChange={(evento) => setPass(evento.target.value)}
             />
           </div>
 
