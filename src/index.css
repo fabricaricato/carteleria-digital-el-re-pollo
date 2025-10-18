@@ -357,7 +357,7 @@ button:active,
 
 .boton-volver:hover {
   transform: translateY(-3px);
-  text-decoration: underline; 
+  text-decoration: none; 
 }
 
 .boton-volver:active {
