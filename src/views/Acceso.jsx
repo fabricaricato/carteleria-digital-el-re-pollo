@@ -2,21 +2,20 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Acceso() {
-  const [contrasena, setContrasena] = useState()
-  const navigate = useNavigate()
-
-  console.log(contrasena)
-
-  const pass = "0000"
-
+  const [contrasena, setContrasena] = useState(); 
+  const navigate = useNavigate();
   const manejarBotonAcceso = (e) => {
-    e.preventDefault()
-    if (contrasena === pass) {
-      navigate("/home")
+    e.preventDefault();
+    
+    // Validar que la contraseña ingresada coincida
+    if (contrasena) {
+      alert("¡Acceso correcto!");
+      navigate("/home");
     } else {
-      console.log("contraseña incorrecta")
+      alert("Contraseña incorrecta");
     }
-  }
+  };
+
   return (
     <div className="contenedor-login">
       <div className="tarjeta-login">
@@ -24,17 +23,6 @@ export default function Acceso() {
         <p className="subtitulo">Ingrese para acceder a su panel de productos</p>
 
         <form className="formulario">
-          <div className="campo">
-            <label htmlFor="usuario">Usuario</label>
-            <input
-              type="text"
-              id="usuario"
-              name="usuario"
-              placeholder="Ingrese su usuario"
-              required
-            />
-          </div>
-
           <div className="campo">
             <label htmlFor="contraseña">Contraseña</label>
             <input
@@ -52,7 +40,7 @@ export default function Acceso() {
           </button>
 
           <p className="texto-registro">
-            ¿No tiene una cuenta? <a href="#">Regístrese aquí</a>
+            ¿Olvidó su contraseña? <a href="#">Restablecer aquí</a>
           </p>
         </form>
       </div>
