@@ -115,6 +115,17 @@
   text-decoration: underline;
 }
 
+.boton-restablecer-contrasena{
+  color: var(--color-texto-oscuro);
+  margin-left: 10px;
+}
+
+.boton-restablecer-contrasena:hover{
+  background-color: var(--color-blanco-hover);
+  transform: scale(1.03);
+}
+
+
 /* Animación de entrada */
 @keyframes aparecer {
   from {
