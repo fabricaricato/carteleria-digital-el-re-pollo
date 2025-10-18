@@ -16,8 +16,8 @@
   --color-fondo-claro: #f0f4f8;
   --color-blanco: #FFFFFF;
   --color-texto-oscuro: #333;
+  --color-sombra: rgba(0, 0, 0, 0.15);
 }
-
 
 /* === LOGIN GRANJA EL RE POLLO === */
 
@@ -158,7 +158,6 @@ button {
   border: none;
   border-radius: 12px;
   padding: 14px;
-  /* 1rem -> 16px */
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
@@ -186,4 +185,139 @@ button {
 
 button:active {
   transform: scale(0.97);
-} 
+}
+
+/* === PÁGINA PANEL DE PRECIOS === */
+
+.panel-contenedor {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #a8c0e0, var(--color-fondo-claro));
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.panel-tarjeta {
+  width: 100%;
+  max-width: 650px; 
+  background-color: var(--color-blanco);
+  border-radius: 20px;
+  border: 3px solid var(--color-amarillo-principal);
+  box-shadow: 0 8px 25px var(--color-sombra);
+  padding: 40px;
+  text-align: center;
+}
+
+.panel-encabezado {
+  margin-bottom: 30px;
+}
+
+.panel-titulo {
+  color: var(--color-rojo-principal);
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.panel-subtitulo {
+  color: var(--color-azul-principal);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.formulario-precios {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.fila-producto {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #f7f9fc;
+}
+
+.fila-producto.encabezado {
+  background: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-texto-oscuro);
+  padding-bottom: 5px;
+}
+
+.fila-producto label {
+  font-weight: 600;
+  color: var(--color-texto-oscuro);
+  flex: 1;
+  text-align: left;
+}
+
+.entrada-precio {
+  width: 120px;
+  padding: 8px 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  text-align: right;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.entrada-precio:focus {
+  border-color: var(--color-azul-principal);
+  box-shadow: 0 0 8px rgba(30, 80, 160, 0.3);
+}
+
+.entrada-precio::-webkit-outer-spin-button,
+.entrada-precio::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.formulario-acciones {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+/* Se sobreescriben los estilos de 'button' genérico y '.boton' del login */
+.formulario-acciones .boton {
+  flex: 1;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--color-blanco);
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.formulario-acciones .boton:hover {
+  transform: translateY(-3px);
+}
+
+.formulario-acciones .boton:active {
+  transform: translateY(0);
+}
+
+.boton-actualizar {
+  background-color: var(--color-rojo-principal);
+}
+
+.boton-actualizar:hover {
+  background-color: var(--color-rojo-hover);
+}
+
+.boton-previsualizar {
+  background-color: var(--color-azul-principal);
+}
+
+.boton-previsualizar:hover {
+  background-color: var(--color-azul-hover);
+}
