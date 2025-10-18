@@ -12,10 +12,37 @@ const Restablecer = () => {
   }
   
   return (
-    <div>
-      <h1>Restablecer contraseña</h1>
-      <p>Contraseña actual: {contrasena}</p>
-      <button onClick={restablecerContrasena} className="boton-restablecer-contrasena">Cambiar contraseña</button>
+    <div className="panel-contenedor">
+      <div className="panel-tarjeta">
+        <header className="panel-encabezado">
+          <h1 className="panel-titulo">Restablecer Contraseña</h1>
+          <p className="panel-subtitulo">
+            Desde aquí puedes cambiar la contraseña de acceso al panel.
+          </p>
+        </header>
+
+        <div className="formulario-precios">
+          <div className="fila-producto encabezado">
+            <label>Contraseña actual:</label>
+            <span className="entrada-precio" style={{ textAlign: "left", border: "none", background: "transparent" }}>
+              {contrasena}
+            </span>
+          </div>
+
+          <div className="formulario-acciones">
+            <button 
+              onClick={restablecerContrasena} 
+              className="boton boton-actualizar"
+            >
+              Cambiar contraseña
+            </button>
+          </div>
+        </div>
+
+        <div className="contenedor-boton-volver">
+          <a href="/" className="boton-volver">← Volver</a>
+        </div>
+      </div>
     </div>
   )
 }

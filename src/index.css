@@ -374,3 +374,97 @@ button:active,
 .boton-volver:active {
   transform: translateY(0);
 }
+
+/* === PÁGINA DE RESTABLECER CONTRASEÑA === */
+
+.restablecer-contenedor {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #a8c0e0, var(--color-fondo-claro));
+  font-family: 'Poppins', sans-serif;
+  padding: 20px;
+}
+
+.restablecer-tarjeta {
+  width: 100%;
+  max-width: 550px;
+  background-color: var(--color-blanco);
+  border-radius: 20px;
+  border: 3px solid var(--color-amarillo-principal);
+  box-shadow: 0 8px 25px var(--color-sombra);
+  padding: 40px;
+  text-align: center;
+  animation: aparecer 0.5s ease-out;
+}
+
+.restablecer-titulo {
+  color: var(--color-rojo-principal);
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.restablecer-subtitulo {
+  color: var(--color-azul-principal);
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.restablecer-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f9fc;
+  padding: 12px 18px;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.restablecer-info label {
+  font-weight: 600;
+  color: var(--color-texto-oscuro);
+}
+
+.restablecer-info span {
+  color: var(--color-azul-principal);
+  font-weight: 500;
+}
+
+.boton-restablecer {
+  background-color: var(--color-rojo-principal);
+  color: var(--color-blanco);
+  border: none;
+  border-radius: 12px;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boton-restablecer:hover {
+  background-color: var(--color-rojo-hover);
+  transform: scale(1.03);
+}
+
+.boton-restablecer:active {
+  transform: scale(0.97);
+}
+
+.restablecer-volver {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--color-azul-principal);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  transition: transform 0.2s ease;
+}
+
+.restablecer-volver:hover {
+  transform: translateY(-3px);
+  text-decoration: underline;
+}
