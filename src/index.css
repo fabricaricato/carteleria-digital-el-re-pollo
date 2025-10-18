@@ -321,3 +321,15 @@ button:active {
 .boton-previsualizar:hover {
   background-color: var(--color-azul-hover);
 }
+
+.boton-volver {
+  color: #333;
+}
+
+.boton-volver:hover{
+  transform: translateY(-3px);
+}
+
+.boton-volver:active {
+  transform: translateY(0);
+}

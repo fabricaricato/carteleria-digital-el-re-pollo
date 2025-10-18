@@ -79,6 +79,9 @@ function PanelPrecios() {
             <button type="submit" className="boton boton-actualizar">Actualizar Precios</button>
             <button type="button" className="boton boton-previsualizar">Vista Previa</button>
           </div>
+          <div className="contenedor-boton-volver">
+            <button className="boton-volver">🠔 Volver</button>
+          </div>
         </form>
       </div>
     </div>
