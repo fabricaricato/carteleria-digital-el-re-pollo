@@ -9,5 +9,5 @@ createRoot(document.getElementById('root')).render(
     <PasswordProvider>
       <RouterApp />
     </PasswordProvider>
-  </StrictMode>,
+  </StrictMode>
 )

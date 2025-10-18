@@ -1,17 +1,22 @@
 import { usePassword } from "../context/PasswordContext"
 
 const Restablecer = () => {
-  const { contrasena, setContrasena, actualizarContrasena } = usePassword()
+  const { contrasena, actualizarContrasena } = usePassword()
   
   const restablecerContrasena = () => {
     const nuevaContrasena = prompt("Ingrese la nueva contraseña:");
     if (nuevaContrasena) {
       actualizarContrasena(nuevaContrasena);
+      alert("¡Contraseña actualizada exitosamente!");
     }
   }
   
   return (
-    <h1>restablecer contraseña: <input></input> <button onClick={restablecerContrasena}>cambiar</button></h1>
+    <div>
+      <h1>Restablecer contraseña</h1>
+      <p>Contraseña actual: {contrasena}</p>
+      <button onClick={restablecerContrasena} className="boton-restablecer-contrasena">Cambiar contraseña</button>
+    </div>
   )
 }
 
