@@ -1,34 +1,16 @@
-# 🐔 Cartelera Digital Avícola
+# React + Vite
 
-Una cartelera digital interactiva para mostrar productos avícolas en pantalla, con panel de administración para editar precios y un sistema de rotación automática de productos.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
----
+Currently, two official plugins are available:
 
-## 📦 Tecnologías usadas
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- CSS puro
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
----
+## React Compiler
 
-## 🧩 Estructura del proyecto
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-PROYECTO ELREPOLLO/
-├── node_modules/
-├── public/
-│ └── images/ # Imágenes y recursos estáticos
-├── src/
-│ ├── assets/ # Imágenes, íconos, fuentes o estilos globales
-│ ├── components/ # Componentes reutilizables (Header, Footer, Cards, etc.)
-│ ├── context/ # Archivos de Context API (manejo global de estado)
-│ ├── router/ # Configuración de rutas y navegación
-│ ├── views/ # Páginas o vistas completas (Cartelera, PanelAdmin, etc.)
-│ │ ├── index.css # Estilos globales de la app
-│ │ └── main.jsx # Punto de entrada principal de React
-├── .gitignore
-├── eslint.config.js
-├── index.html
-├── package.json
-├── package-lock.json
-├── vite.config.js
-└── README.md
+## Expanding the ESLint configuration
+
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

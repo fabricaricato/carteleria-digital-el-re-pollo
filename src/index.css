@@ -1,97 +1,113 @@
-body {
+* {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  background-color: #fffef5;
-  color: #333;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.header {
-  background-color: #ffca3a;
-  color: #2e2e2e;
-  text-align: center;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* === LOGIN GRANJA EL PIQUITO === */
+
+.contenedor-login {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, #f9e4b7, #f0c95d);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.footer {
-  background-color: #ffca3a;
+.tarjeta-login {
+  background-color: #fff8e1;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  padding: 40px;
+  width: 500px;
   text-align: center;
-  padding: 1rem;
+  border: 2px solid #f4ca64;
+  animation: aparecer 0.5s ease-out;
+}
+
+.titulo {
+  font-size: 1.6rem;
+  color: #b87033;
+  margin-bottom: 0.5rem;
+}
+
+.subtitulo {
   font-size: 0.9rem;
+  color: #5a4632;
+  margin-bottom: 1.5rem;
 }
 
-.sidebar {
-  flex: 1;
-  background: #fff5d7;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
 }
 
-.product-card {
-  background: white;
-  border-radius: 10px;
-  padding: 1rem;
-  text-align: center;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+.campo {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
 
-.product-card img {
-  width: 100%;
+.campo label {
+  font-weight: 600;
+  color: #7c5c3b;
+  margin-bottom: 0.3rem;
+}
+
+.campo input {
+  padding: 10px;
+  border: 1px solid #e0c385;
   border-radius: 8px;
-  height: 150px;
-  object-fit: cover;
+  outline: none;
+  font-size: 0.95rem;
 }
 
-.product-card .price {
-  font-weight: bold;
-  color: #e06c00;
-  margin-top: 0.5rem;
+.campo input:focus {
+  border-color: #f4ca64;
+  box-shadow: 0 0 4px #f4ca64;
 }
 
-.rotating-products {
-  flex: 3;
-}
-
-.rotating-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.5rem;
-}
-
-.admin-panel {
-  flex: 1;
-  background-color: #fffaf0;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-
-.admin-panel table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.admin-panel th, .admin-panel td {
-  padding: 0.5rem;
-  border-bottom: 1px solid #ddd;
-}
-
-.admin-panel input {
-  width: 100%;
-  padding: 0.3rem;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-}
-
-.admin-panel button {
-  background-color: #ffca3a;
+.boton {
+  background-color: #f4ca64;
+  color: #fff;
   border: none;
-  padding: 0.4rem 0.8rem;
-  border-radius: 5px;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 1rem;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.admin-panel button:hover {
-  background-color: #ffd45e;
+.boton:hover {
+  background-color: #e0b34b;
+}
+
+.texto-registro {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #7c5c3b;
+}
+
+.texto-registro a {
+  color: #b87033;
+  text-decoration: none;
+}
+
+.texto-registro a:hover {
+  text-decoration: underline;
+}
+
+/* Animación de entrada */
+@keyframes aparecer {
+  from {
+    transform: translateY(15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
