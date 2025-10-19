@@ -23,6 +23,18 @@ export default function Acceso() {
     }
   }, [navigate])
 
+  useEffect(() => {
+    const chequeoPantallaTamano = () => {
+      // Si la pantalla es mayor a (x)PX, redirigir
+      if (window.innerWidth < 768) {
+        navigate('/carteleria');
+      }
+    };
+    chequeoPantallaTamano();
+    window.addEventListener('resize', chequeoPantallaTamano);
+    return () => window.removeEventListener('resize', chequeoPantallaTamano);
+  }, [navigate]);
+
   const manejarEnvio = (e) => {
     e.preventDefault();
     if (pass === contrasena) {
@@ -48,18 +60,6 @@ export default function Acceso() {
   const paginaRestablecer = () => {
     preguntaSeguridad()
   }
-
-  useEffect(() => {
-    const chequeoPantallaTamano = () => {
-      // Si la pantalla es mayor a (x)PX, redirigir
-      if (window.innerWidth < 768) {
-        navigate('/carteleria');
-      }
-    };
-    chequeoPantallaTamano();
-    window.addEventListener('resize', chequeoPantallaTamano);
-    return () => window.removeEventListener('resize', chequeoPantallaTamano);
-  }, [navigate]);
 
   return (
     <div className="contenedor-login">
