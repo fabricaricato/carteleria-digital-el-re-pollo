@@ -7,10 +7,18 @@ const Restablecer = () => {
   
   const restablecerContrasena = () => {
     const nuevaContrasena = prompt("Ingrese la nueva contraseña:");
-    if (nuevaContrasena) {
-      actualizarContrasena(nuevaContrasena);
-      alert("¡Contraseña actualizada exitosamente!");
+    if (nuevaContrasena !== "") {
+      const confirmacionContrasena = confirm("Su contraseña se actualizará a: " + nuevaContrasena + ", ¿desea continuar?");
+      if (confirmacionContrasena) {
+        actualizarContrasena(nuevaContrasena);
+        alert("¡Contraseña actualizada exitosamente!");
+      } else {
+        alert("Contraseña no actualizada");
+      }
+    } else {
+      alert("No puede ingresar una contraseña vacia, reintentelo nuevamente")
     }
+    
   }
 
   const volverLogin = () => {
@@ -29,13 +37,6 @@ const Restablecer = () => {
         </header>
 
         <div className="formulario-precios">
-          <div className="fila-producto encabezado">
-            <label>Contraseña actual:</label>
-            <span className="entrada-precio" style={{ textAlign: "left", border: "none", background: "transparent" }}>
-              {contrasena}
-            </span>
-          </div>
-
           <div className="formulario-acciones">
             <button 
               onClick={restablecerContrasena} 
