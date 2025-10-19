@@ -49,6 +49,18 @@ export default function Acceso() {
     preguntaSeguridad()
   }
 
+  useEffect(() => {
+    const chequeoPantallaTamano = () => {
+      // Si la pantalla es mayor a (x)PX, redirigir
+      if (window.innerWidth < 768) {
+        navigate('/carteleria');
+      }
+    };
+    chequeoPantallaTamano();
+    window.addEventListener('resize', chequeoPantallaTamano);
+    return () => window.removeEventListener('resize', chequeoPantallaTamano);
+  }, [navigate]);
+
   return (
     <div className="contenedor-login">
       <div className="tarjeta-login">
