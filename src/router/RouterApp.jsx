@@ -5,6 +5,7 @@ import PanelPrecios from "../views/PanelPrecios";
 import Restablecer from "../views/Restablecer"
 import ProtectedRoute from "../components/ProtectedRouteLogin";
 import ProtectedResetRoute from "../components/ProtectedResetRoute";
+import Carteleria from "../views/Carteleria"
 
 const RouterApp = () => {
   return (
@@ -21,6 +22,7 @@ const RouterApp = () => {
             <Restablecer />
           </ProtectedResetRoute>
           } />
+        <Route path="/carteleria" element={<Carteleria/>} />
       </Routes>
     </BrowserRouter>
   )
