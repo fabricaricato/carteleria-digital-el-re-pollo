@@ -7,6 +7,7 @@ export default function Acceso() {
   const navigate = useNavigate()
   const { contrasena } = usePassword()
   const [pass, setPass] = useState("")
+  const [preg, setPreg] = useState("kia")
 
   useEffect(() => {
     const isLoggedIn = localStorage.getItem("isLoggedIn")
@@ -26,8 +27,18 @@ export default function Acceso() {
     }
   }
 
+  const preguntaSeguridad = () => {
+    const pregunta = prompt("pregunta de seguridad: cual fue su primer auto? ")
+    if (pregunta === preg) {
+      alert("¡Acceso correcto!");
+      navigate("/restablecer-contraseña")
+    } else {
+      alert("Pregunta incorrecta, ingrese nuevamente");
+    }
+  }
+
   const paginaRestablecer = () => {
-    navigate("/restablecer-contraseña")
+    preguntaSeguridad()
   }
 
   return (
