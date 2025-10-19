@@ -6,6 +6,7 @@ import Restablecer from "../views/Restablecer"
 import ProtectedRoute from "../components/ProtectedRouteLogin";
 import ProtectedResetRoute from "../components/ProtectedResetRoute";
 import Carteleria from "../views/Carteleria"
+import Error404 from "../views/Error404";
 
 const RouterApp = () => {
   return (
@@ -22,7 +23,8 @@ const RouterApp = () => {
             <Restablecer />
           </ProtectedResetRoute>
           } />
-        <Route path="/carteleria" element={<Carteleria/>} />
+        <Route path="/carteleria" element={<Carteleria />} />
+        <Route path="/*" element={<Error404/>} />
       </Routes>
     </BrowserRouter>
   )
