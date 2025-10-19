@@ -1,11 +1,19 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { usePassword } from "../context/PasswordContext";
+import { useEffect } from "react";
 
 export default function Acceso() {
   const navigate = useNavigate()
   const { contrasena } = usePassword()
   const [pass, setPass] = useState("")
+
+  useEffect(() => {
+    const isLoggedIn = localStorage.getItem("isLoggedIn")
+    if (isLoggedIn === "true") {
+      navigate("/home")
+    }
+  }, [navigate])
 
   const manejarEnvio = (e) => {
     e.preventDefault();

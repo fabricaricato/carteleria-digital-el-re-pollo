@@ -4,6 +4,7 @@ export default function Home() {
   const navigate = useNavigate()
 
   const manejarBotonCerrar = () => {
+    localStorage.removeItem("isLoggedIn")
     navigate("/")
   }
   return (
