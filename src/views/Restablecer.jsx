@@ -1,7 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import { usePassword } from "../context/PasswordContext"
 
 const Restablecer = () => {
   const { contrasena, actualizarContrasena } = usePassword()
+  const navigate = useNavigate()
   
   const restablecerContrasena = () => {
     const nuevaContrasena = prompt("Ingrese la nueva contraseña:");
@@ -9,6 +11,11 @@ const Restablecer = () => {
       actualizarContrasena(nuevaContrasena);
       alert("¡Contraseña actualizada exitosamente!");
     }
+  }
+
+  const volverLogin = () => {
+    localStorage.removeItem("canResetPassword")
+    navigate("/")
   }
   
   return (
@@ -40,7 +47,7 @@ const Restablecer = () => {
         </div>
 
         <div className="contenedor-boton-volver">
-          <a href="/" className="boton-volver">← Volver</a>
+          <button onClick={volverLogin} href="/" className="boton-volver">← Volver</button>
         </div>
       </div>
     </div>

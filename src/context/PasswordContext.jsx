@@ -4,7 +4,7 @@ const PasswordContext = createContext();
 
 const PasswordProvider = ({ children }) => {
   // Inicializa con una contraseña por defecto
-  const [contrasena, setContrasena] = useState("1234");
+  const [contrasena, setContrasena] = useState("0000");
 
   const actualizarContrasena = (nuevaContrasena) => {
     setContrasena(nuevaContrasena);

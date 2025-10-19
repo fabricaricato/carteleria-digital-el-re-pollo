@@ -16,6 +16,13 @@ export default function Acceso() {
     }
   }, [navigate])
 
+  useEffect(() => {
+    const canResetPassword = localStorage.getItem("canResetPassword")
+    if (canResetPassword === "true") {
+      navigate("/restablecer-contraseña")
+    }
+  }, [navigate])
+
   const manejarEnvio = (e) => {
     e.preventDefault();
     if (pass === contrasena) {
@@ -31,6 +38,7 @@ export default function Acceso() {
     const pregunta = prompt("pregunta de seguridad: cual fue su primer auto? ")
     if (pregunta === preg) {
       alert("¡Acceso correcto!");
+      localStorage.setItem("canResetPassword", "true");
       navigate("/restablecer-contraseña")
     } else {
       alert("Pregunta incorrecta, ingrese nuevamente");
