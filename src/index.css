@@ -233,7 +233,7 @@ button:active,
 
 .panel-tarjeta {
   width: 100%;
-  /* max-width: 70%;  */
+  /* max-width: 850px; */
   background-color: var(--color-blanco);
   border-radius: 20px;
   border: 3px solid var(--color-amarillo-principal);
@@ -518,6 +518,10 @@ button:active,
   background: linear-gradient(135deg, #a8c0e0, var(--color-fondo-claro));
   font-family: 'Poppins', sans-serif;
   padding: 20px;
+}
+
+.tarjeta-restablecer {
+  max-width: 30%;
 }
 
 .restablecer-tarjeta {

@@ -28,7 +28,7 @@ const Restablecer = () => {
   
   return (
     <div className="panel-contenedor">
-      <div className="panel-tarjeta">
+      <div className="panel-tarjeta tarjeta-restablecer">
         <header className="panel-encabezado">
           <h1 className="panel-titulo">Restablecer Contraseña</h1>
           <p className="panel-subtitulo">
