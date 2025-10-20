@@ -3,71 +3,165 @@ import { useContext, createContext, useState, useEffect } from "react";
 const PreciosContext = createContext();
 
 const PreciosProvider = ({ children }) => {
-  const [precio, setPrecio] = useState([
+  const preciosIniciales = [
     [
       { 
-        id: 1, icono: '🍗', nombre: 'Pollo Entero', precio: '$2,850', unidad: 'por kg', destacado: true, etiqueta: 'OFERTA' 
+        id: 1, nombre: 'Pollo Entero', precio: '0', unidad: 'por kg', destacado: true, etiqueta: 'OFERTA' 
       },
       { 
-        id: 2, icono: '🍖', nombre: 'Pechuga', precio: '$3,200', unidad: 'por kg' 
+        id: 2, nombre: 'Pechuga', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 3, icono: '🍗', nombre: 'Pata Muslo', precio: '$2,450', unidad: 'por kg' 
+        id: 3, nombre: 'Pata Muslo', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 4, icono: '🥚', nombre: 'Huevos Frescos', precio: '$1,680', unidad: 'por maple', destacado: true, etiqueta: 'PROMO' 
+        id: 4, nombre: 'Huevos Frescos', precio: '0', unidad: 'por maple', destacado: true, etiqueta: 'PROMO' 
       },
       { 
-        id: 5, icono: '🍗', nombre: 'Alitas', precio: '$2,980', unidad: 'por kg' 
+        id: 5, nombre: 'Alitas', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 6, icono: '🍖', nombre: 'Suprema', precio: '$3,400', unidad: 'por kg' 
+        id: 6, nombre: 'Suprema', precio: '0', unidad: 'por kg' 
       }
     ],
     [
       { 
-        id: 7, icono: '🍖', nombre: 'Milanesas', precio: '$3,450', unidad: 'por kg', destacado: true, etiqueta: 'NUEVO' 
+        id: 7, nombre: 'Milanesas', precio: '0', unidad: 'por kg', destacado: true, etiqueta: 'NUEVO' 
       },
       { 
-        id: 8, icono: '🍗', nombre: 'Trutro', precio: '$2,200', unidad: 'por kg' 
+        id: 8, nombre: 'Trutro', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 9, icono: '🍖', nombre: 'Pechuga Deshuesada', precio: '$3,600', unidad: 'por kg' 
+        id: 9, nombre: 'Pechuga Deshuesada', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 10, icono: '🍗', nombre: 'Muslos', precio: '$2,350', unidad: 'por kg' 
+        id: 10, nombre: 'Muslos', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 11, icono: '🍖', nombre: 'Pata', precio: '$2,150', unidad: 'por kg', destacado: true, etiqueta: 'OFERTA' 
+        id: 11, nombre: 'Pata', precio: '0', unidad: 'por kg', destacado: true, etiqueta: 'OFERTA' 
       },
       { 
-        id: 12, icono: '🍗', nombre: 'Alón', precio: '$2,750', unidad: 'por kg' 
+        id: 12, nombre: 'Alón', precio: '0', unidad: 'por kg' 
       }
     ],
     [
       { 
-        id: 13, icono: '🥚', nombre: 'Huevos Color', precio: '$1,850', unidad: 'por maple', destacado: true, etiqueta: 'NUEVO' 
+        id: 13, nombre: 'Huevos Color', precio: '0', unidad: 'por maple', destacado: true, etiqueta: 'NUEVO' 
       },
       { 
-        id: 14, icono: '🍖', nombre: 'Carcasa', precio: '$1,950', unidad: 'por kg' 
+        id: 14, nombre: 'Carcasa', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 15, icono: '🍗', nombre: 'Menudos', precio: '$1,500', unidad: 'por kg' 
+        id: 15, nombre: 'Menudos', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 16, icono: '🍖', nombre: 'Nuggets', precio: '$3,800', unidad: 'por kg' 
+        id: 16, nombre: 'Nuggets', precio: '0', unidad: 'por kg' 
       },
       { 
-        id: 17, icono: '🍗', nombre: 'Alitas Marinadas', precio: '$3,200', unidad: 'por kg', destacado: true, etiqueta: 'PROMO' 
+        id: 17, nombre: 'Alitas Marinadas', precio: '0', unidad: 'por kg', destacado: true, etiqueta: 'PROMO' 
       },
       { 
-        id: 18, icono: '🍖', nombre: 'Pechuga Marinada', precio: '$3,650', unidad: 'por kg' 
+        id: 18, nombre: 'Pechuga Marinada', precio: '0', unidad: 'por kg' 
       }
     ]
-  ]);
+  ];
+
+  // Cargar precios desde localStorage o usar valores iniciales
+  const cargarPrecios = () => {
+    try {
+      const preciosGuardados = localStorage.getItem('precios');
+      if (preciosGuardados) {
+        return JSON.parse(preciosGuardados);
+      }
+      return preciosIniciales;
+    } catch (error) {
+      console.error('Error al cargar precios:', error);
+      return preciosIniciales;
+    }
+  };
+
+  const [precio, setPrecio] = useState(cargarPrecios);
+
+  // Guardar en localStorage cada vez que cambien los precios
+  useEffect(() => {
+    try {
+      localStorage.setItem('precios', JSON.stringify(precio));
+    } catch (error) {
+      console.error('Error al guardar precios:', error);
+    }
+  }, [precio]);
+
+  // Actualizar cualquier campo de un producto por ID
+  const actualizarProducto = (id, nuevosDatos) => {
+    setPrecio(prevPrecio => 
+      prevPrecio.map(fila => 
+        fila.map(producto => 
+          producto.id === id 
+            ? { ...producto, ...nuevosDatos } 
+            : producto
+        )
+      )
+    );
+  };
+
+  // Actualizar solo el precio de un producto
+  const actualizarPrecio = (id, nuevoPrecio) => {
+    actualizarProducto(id, { precio: nuevoPrecio });
+  };
+
+  // Actualizar solo el nombre de un producto
+  const actualizarNombre = (id, nuevoNombre) => {
+    actualizarProducto(id, { nombre: nuevoNombre });
+  };
+
+  // Eliminar un producto
+  const eliminarProducto = (id) => {
+    setPrecio(prevPrecio => 
+      prevPrecio.map(fila => fila.filter(producto => producto.id !== id))
+    );
+  };
+
+  // Agregar un producto a una fila específica
+  const agregarProducto = (filaIndex, nuevoProducto) => {
+    setPrecio(prevPrecio => 
+      prevPrecio.map((fila, index) => 
+        index === filaIndex ? [...fila, nuevoProducto] : fila
+      )
+    );
+  };
+
+  // Resetear a valores iniciales
+  const resetearPrecios = () => {
+    setPrecio(preciosIniciales);
+    localStorage.setItem('precios', JSON.stringify(preciosIniciales));
+  };
+
+  // Obtener un producto por ID
+  const obtenerProducto = (id) => {
+    return precio.flat().find(producto => producto.id === id);
+  };
+
+  // Limpiar localStorage
+  const limpiarStorage = () => {
+    localStorage.removeItem('precios');
+    setPrecio(preciosIniciales);
+  };
+
+  const value = {
+    precio,
+    setPrecio,
+    actualizarProducto,
+    actualizarPrecio,
+    actualizarNombre,
+    eliminarProducto,
+    agregarProducto,
+    resetearPrecios,
+    obtenerProducto,
+    limpiarStorage
+  };
 
   return (
-    <PreciosContext.Provider value={{ precio, setPrecio }}>
+    <PreciosContext.Provider value={value}>
       {children}
     </PreciosContext.Provider>
   );
