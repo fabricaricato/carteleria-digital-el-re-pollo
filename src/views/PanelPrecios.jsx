@@ -14,12 +14,6 @@ const PanelPrecios = () => {
         </header>
 
         <form className="formulario-precios">
-          {/* Encabezado */}
-          <div className="fila-producto encabezado">
-            <span>Producto</span>
-            <span>Precio ($)</span>
-          </div>
-
           {/* Productos */}
           {precio.map((grupo, i) => (
             <div key={i} className="grupo-productos">
