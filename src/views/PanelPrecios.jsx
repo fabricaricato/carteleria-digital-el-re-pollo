@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import "../index.css"
+import { usePrecios } from "../context/PreciosContext";
 
-function PanelPrecios() {
+const PanelPrecios = () => {
+  const { precio } = usePrecios();
   return (
     <div className="panel-contenedor">
       <div className="panel-tarjeta">
@@ -16,9 +18,8 @@ function PanelPrecios() {
             <span>Precio ($)</span>
           </div>
 
-          {/* Producto 1 */}
           <div className="fila-producto">
-            <label htmlFor="pollo-entero">Pollo Entero</label>
+            <label htmlFor="pollo-entero">{precio[0][0].nombre}</label>
             <input 
               type="number" 
               id="pollo-entero" 
@@ -28,9 +29,8 @@ function PanelPrecios() {
             />
           </div>
 
-          {/* Producto 2 */}
           <div className="fila-producto">
-            <label htmlFor="pollo-trozado">Pollo Trozado (x Kg)</label>
+            <label htmlFor="pollo-trozado">{precio[0][1].nombre}</label>
             <input 
               type="number" 
               id="pollo-trozado" 
@@ -40,9 +40,8 @@ function PanelPrecios() {
             />
           </div>
 
-          {/* Producto 3 */}
           <div className="fila-producto">
-            <label htmlFor="milanesas">Milanesas (x Kg)</label>
+            <label htmlFor="milanesas">{precio[0][2].nombre}</label>
             <input 
               type="number" 
               id="milanesas" 
@@ -52,9 +51,8 @@ function PanelPrecios() {
             />
           </div>
           
-          {/* Producto 4 */}
           <div className="fila-producto">
-            <label htmlFor="patamuslo">Pata Muslo (x Kg)</label>
+            <label htmlFor="patamuslo">{precio[0][3].nombre}</label>
             <input 
               type="number" 
               id="patamuslo" 
@@ -64,9 +62,8 @@ function PanelPrecios() {
             />
           </div>
           
-          {/* Producto 5 */}
           <div className="fila-producto">
-            <label htmlFor="alitas">Alitas (x Kg)</label>
+            <label htmlFor="alitas">{precio[0][4].nombre}</label>
             <input 
               type="number" 
               id="alitas" 
@@ -76,14 +73,156 @@ function PanelPrecios() {
             />
           </div>
 
-          <div className="formulario-acciones">
-            <button type="submit" className="boton boton-actualizar">Actualizar Precios</button>
-            <button type="button" className="boton boton-previsualizar">Vista Previa</button>
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[0][5].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
           </div>
-          <div className="contenedor-boton-volver">
-            <Link className="boton-volver" to="/home">🠔 Volver</Link>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[1][0].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[1][1].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[1][2].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[1][3].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[1][4].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[1][5].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[2][0].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[2][1].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[2][2].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[2][3].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[2][4].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
+          </div>
+
+          <div className="fila-producto">
+            <label htmlFor="alitas">{precio[2][5].nombre}</label>
+            <input 
+              type="number" 
+              id="alitas" 
+              name="alitas" 
+              placeholder="Ej: 2500" 
+              className="entrada-precio" 
+            />
           </div>
         </form>
+        <div className="formulario-acciones">
+          <button type="submit" className="boton boton-actualizar">Actualizar Precios</button>
+          <button type="button" className="boton boton-previsualizar">Vista Previa</button>
+        </div>
+        <div className="contenedor-boton-volver">
+          <Link className="boton-volver" to="/home">🠔 Volver</Link>
+        </div>
       </div>
     </div>
   );

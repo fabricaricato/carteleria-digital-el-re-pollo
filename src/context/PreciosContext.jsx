@@ -12,7 +12,7 @@ const PreciosProvider = ({ children }) => {
         id: 2, icono: '🍖', nombre: 'Pechuga', precio: '$3,200', unidad: 'por kg' 
       },
       { 
-        id: 3, icono: '🍗', nombre: 'Pata-Muslo', precio: '$2,450', unidad: 'por kg' 
+        id: 3, icono: '🍗', nombre: 'Pata Muslo', precio: '$2,450', unidad: 'por kg' 
       },
       { 
         id: 4, icono: '🥚', nombre: 'Huevos Frescos', precio: '$1,680', unidad: 'por maple', destacado: true, etiqueta: 'PROMO' 
