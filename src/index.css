@@ -859,34 +859,140 @@ button:active,
     width: 100%;
   }
 
+  /* Cartelería Mobile */
   .carteleria-contenedor {
-    height: auto;
-    min-height: 90vh;
+    height: 100vh;
+    padding: 15px;
+    border-width: 2px;
+  }
+
+  .encabezado {
+    margin-bottom: 15px;
+    padding-bottom: 12px;
+    border-bottom-width: 2px;
   }
 
   .logo-titulo {
-    font-size: 36px;
+    font-size: 32px;
+    margin-bottom: 5px;
   }
   
   .subtitulo-cartel {
-    font-size: 18px;
+    font-size: 16px;
+  }
+
+  .fecha-hora {
+    font-size: 14px;
+    margin-top: 5px;
   }
   
   .grid-productos {
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 15px;
+    padding: 10px;
   }
 
-  .precio-producto {
-    font-size: 38px;
+  .tarjeta-producto {
+    padding: 20px 15px;
+    border-width: 2px;
   }
 
   .icono-producto {
-    font-size: 55px;
+    font-size: 50px;
+    margin-bottom: 8px;
   }
 
   .nombre-producto {
     font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  .precio-producto {
+    font-size: 36px;
+    margin-bottom: 5px;
+  }
+
+  .unidad-producto {
+    font-size: 14px;
+  }
+
+  .etiqueta-oferta {
+    font-size: 12px;
+    padding: 6px 40px;
+    top: 12px;
+    right: -38px;
+  }
+
+  .indicadores {
+    margin-top: 12px;
+    gap: 8px;
+  }
+
+  .indicador {
+    width: 10px;
+    height: 10px;
+  }
+
+  .mensaje-contacto {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .info-contacto {
+    font-size: 14px;
+  }
+}
+
+/* Para celulares pequeños */
+@media (max-width: 480px) {
+  .carteleria-contenedor {
+    padding: 10px;
+  }
+
+  .logo-titulo {
+    font-size: 26px;
+  }
+
+  .subtitulo-cartel {
+    font-size: 14px;
+  }
+
+  .fecha-hora {
+    font-size: 12px;
+  }
+
+  .grid-productos {
+    gap: 12px;
+    padding: 5px;
+  }
+
+  .tarjeta-producto {
+    padding: 15px 12px;
+  }
+
+  .icono-producto {
+    font-size: 40px;
+  }
+
+  .nombre-producto {
+    font-size: 18px;
+  }
+
+  .precio-producto {
+    font-size: 32px;
+  }
+
+  .unidad-producto {
+    font-size: 13px;
+  }
+
+  .indicadores {
+    gap: 6px;
+  }
+
+  .indicador {
+    width: 8px;
+    height: 8px;
   }
 }
 
