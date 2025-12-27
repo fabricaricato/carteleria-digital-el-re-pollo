@@ -1,18 +1,26 @@
 {
-  "name": "server",
+  "name": "carteleria-digital-el-re-pollo",
   "version": "1.0.0",
-  "description": "elrepollo server",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "node --watch ./src/index.js"
+    "dev": "node --watch index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabricaricato/carteleria-digital-el-re-pollo.git"
   },
   "keywords": [],
   "author": "fabriziocaricato",
   "license": "ISC",
   "type": "module",
+  "bugs": {
+    "url": "https://github.com/fabricaricato/carteleria-digital-el-re-pollo/issues"
+  },
+  "homepage": "https://github.com/fabricaricato/carteleria-digital-el-re-pollo#readme",
   "dependencies": {
     "cors": "^2.8.5",
     "express": "^5.2.1",
-    "moongose": "^1.0.0"
+    "mongoose": "^9.0.2"
   }
 }
