@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "elrepollo server",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node --watch ./src/index.js"
+  },
+  "keywords": [],
+  "author": "fabriziocaricato",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "moongose": "^1.0.0"
+  }
+}
